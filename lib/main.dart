@@ -3,10 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
+import '_1105/d_day/data/model/dDay.dart';
 import 'home.dart';
 
 void main() async {
   await Hive.initFlutter();
+  Hive.registerAdapter(DDayAdapter());
 
   runApp(
     // Provider 용
