@@ -24,7 +24,7 @@ class FoodIcon extends StatelessWidget {
               height: 64,
               width: 64,
               errorBuilder: (context, error, stackTrace) => Image.asset(
-                "lib/assets/imgs/foodIcons/no_image_square.jpg",
+                "lib/core/assets/imgs/foodIcons/no_image_square.jpg",
                 height: 64,
                 width: 64,
               ),

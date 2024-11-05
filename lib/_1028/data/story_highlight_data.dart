@@ -1,4 +1,4 @@
-import 'package:pro1022/_1028/model/story_highligt.dart';
+import '../model/story_highligt.dart';
 
 List<StoryHighligt> shData = [
   StoryHighligt(

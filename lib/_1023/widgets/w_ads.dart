@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import '../v_adspage.dart';
 
 List<String> adList = [
-  "lib/assets/imgs/ads/ad0.png",
-  "lib/assets/imgs/ads/ad1.png",
-  "lib/assets/imgs/ads/ad2.png",
-  "lib/assets/imgs/ads/ad3.png",
-  "lib/assets/imgs/ads/ad4.png",
-  "lib/assets/imgs/ads/ad5.png",
-  "lib/assets/imgs/ads/ad6.png",
+  "lib/core/assets/imgs/ads/ad0.png",
+  "lib/core/assets/imgs/ads/ad1.png",
+  "lib/core/assets/imgs/ads/ad2.png",
+  "lib/core/assets/imgs/ads/ad3.png",
+  "lib/core/assets/imgs/ads/ad4.png",
+  "lib/core/assets/imgs/ads/ad5.png",
+  "lib/core/assets/imgs/ads/ad6.png",
 ];
 
 class AdsWidgets extends StatefulWidget {
@@ -34,15 +34,12 @@ class _AdsWidgetsState extends State<AdsWidgets> {
       height: 120,
       child: Stack(
         children: [
-          PageView(
+          PageView.builder(
+            itemBuilder: (context, index) => Image.asset(
+              adList[index],
+              fit: BoxFit.fill,
+            ),
             controller: _pageController,
-            children: [
-              for (var x in adList)
-                Image.asset(
-                  x,
-                  fit: BoxFit.fill,
-                ),
-            ],
           ),
           Positioned(
             bottom: 4,
