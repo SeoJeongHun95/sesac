@@ -26,6 +26,7 @@ class DDayHomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           showDialog(
+            barrierDismissible: false,
             context: context,
             builder: (context) => const NewDDayDialog(),
           );

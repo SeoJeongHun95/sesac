@@ -6,12 +6,12 @@ part of 'p_d_day_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$dDaysDataHash() => r'878412a4030385cb5e6cfad17da426aab67a58af';
+String _$dDaysDataHash() => r'e4bbdbcf8648786cdaec8be1a265039d89d82ef6';
 
 /// See also [DDaysData].
 @ProviderFor(DDaysData)
 final dDaysDataProvider =
-    AutoDisposeNotifierProvider<DDaysData, List<DDay>>.internal(
+    AutoDisposeAsyncNotifierProvider<DDaysData, List<DDay>>.internal(
   DDaysData.new,
   name: r'dDaysDataProvider',
   debugGetCreateSourceHash:
@@ -20,6 +20,6 @@ final dDaysDataProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$DDaysData = AutoDisposeNotifier<List<DDay>>;
+typedef _$DDaysData = AutoDisposeAsyncNotifier<List<DDay>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

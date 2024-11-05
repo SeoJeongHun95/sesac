@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
-import 'package:pro1022/_1105/d_day/data/model/dDay.dart';
-import 'package:pro1022/_1105/d_day/presentation/provider/p_d_day_provider.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../../core/widget/jua_text.dart';
+import '../../data/model/dDay.dart';
+import '../provider/p_d_day_provider.dart';
 
 class NewDDayDialog extends ConsumerStatefulWidget {
   const NewDDayDialog({super.key});

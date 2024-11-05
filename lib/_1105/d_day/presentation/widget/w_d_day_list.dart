@@ -9,7 +9,7 @@ class DDayListWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final dDaysData = ref.watch(dDaysDataProvider);
+    final asyncDDaysData = ref.watch(dDaysDataProvider);
 
     String calcDDay(DateTime dday) {
       String result = "";
@@ -29,26 +29,33 @@ class DDayListWidget extends ConsumerWidget {
     }
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
-      child: ListView.separated(
-        itemBuilder: (context, index) => ListTile(
-          title: JuaText(
-            str: dDaysData[index].title,
-            color: Colors.black87,
+      padding: const EdgeInsets.all(8.0),
+      child: asyncDDaysData.when(
+        data: (dDaysData) => ListView.separated(
+          itemBuilder: (context, index) => ListTile(
+            title: JuaText(
+              str: dDaysData[index].title,
+              color: Colors.black87,
+            ),
+            leading: JuaText(
+              str: calcDDay(dDaysData[index].day),
+              color: Colors.red,
+            ),
+            trailing: IconButton(
+              onPressed: () =>
+                  ref.read(dDaysDataProvider.notifier).deleteDDay(index),
+              icon: const Icon(Icons.delete),
+            ),
           ),
-          leading: JuaText(
-            str: calcDDay(dDaysData[index].day),
-            color: Colors.red,
+          separatorBuilder: (context, index) => const Divider(
+            height: 4,
           ),
-          trailing: IconButton(
-            onPressed: () => ref
-                .read(dDaysDataProvider.notifier)
-                .deleteDDay(dDaysData[index]),
-            icon: const Icon(Icons.delete),
-          ),
+          itemCount: dDaysData.length,
         ),
-        separatorBuilder: (context, index) => const Divider(),
-        itemCount: dDaysData.length,
+        error: (error, stackTrace) => Center(
+          child: JuaText(str: "데이터로드에 실패하였습니다."),
+        ),
+        loading: () => const CircularProgressIndicator(),
       ),
     );
   }

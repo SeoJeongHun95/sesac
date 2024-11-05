@@ -1,3 +1,4 @@
+import 'package:hive/hive.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../data/model/dDay.dart';
@@ -6,16 +7,21 @@ part 'p_d_day_provider.g.dart';
 
 @riverpod
 class DDaysData extends _$DDaysData {
+  late Box<DDay> myBox;
+
   @override
-  List<DDay> build() {
-    return [];
+  Future<List<DDay>> build() async {
+    myBox = await Hive.openBox<DDay>('myBox');
+    return myBox.values.toList();
   }
 
-  void addDDay(DDay dday) async {
-    state = [...state, dday];
+  Future<void> addDDay(DDay dday) async {
+    await myBox.add(dday);
+    state = AsyncValue.data([...state.value ?? [], dday]);
   }
 
-  void deleteDDay(DDay dday) {
-    state = [...state.where((element) => element.id != dday.id)];
+  Future<void> deleteDDay(int index) async {
+    await myBox.deleteAt(index);
+    state = AsyncValue.data(myBox.values.toList());
   }
 }
