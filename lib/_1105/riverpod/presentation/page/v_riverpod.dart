@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pro1022/_1105/riverpod/presentation/widgets/w_riverpod_check.dart';
-import 'package:pro1022/_1105/riverpod/presentation/widgets/w_riverpod_counter.dart';
+
+import '../widgets/w_riverpod_check.dart';
+import '../widgets/w_riverpod_counter.dart';
 
 class RiverpodPage extends StatelessWidget {
   const RiverpodPage({super.key});
