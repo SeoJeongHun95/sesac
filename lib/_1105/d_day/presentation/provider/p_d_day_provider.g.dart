@@ -6,7 +6,7 @@ part of 'p_d_day_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$dDaysDataHash() => r'e4bbdbcf8648786cdaec8be1a265039d89d82ef6';
+String _$dDaysDataHash() => r'f52cb87528f0a8b6034036395af955715977605e';
 
 /// See also [DDaysData].
 @ProviderFor(DDaysData)

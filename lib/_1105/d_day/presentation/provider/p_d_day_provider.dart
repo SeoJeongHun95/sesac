@@ -7,21 +7,21 @@ part 'p_d_day_provider.g.dart';
 
 @riverpod
 class DDaysData extends _$DDaysData {
-  late Box<DDay> myBox;
+  late Box<DDay> dDayBox;
 
   @override
   Future<List<DDay>> build() async {
-    myBox = await Hive.openBox<DDay>('myBox');
-    return myBox.values.toList();
+    dDayBox = await Hive.openBox<DDay>('dDayBox');
+    return dDayBox.values.toList();
   }
 
   Future<void> addDDay(DDay dday) async {
-    await myBox.add(dday);
+    await dDayBox.add(dday);
     state = AsyncValue.data([...state.value ?? [], dday]);
   }
 
   Future<void> deleteDDay(int index) async {
-    await myBox.deleteAt(index);
-    state = AsyncValue.data(myBox.values.toList());
+    await dDayBox.deleteAt(index);
+    state = AsyncValue.data(dDayBox.values.toList());
   }
 }
