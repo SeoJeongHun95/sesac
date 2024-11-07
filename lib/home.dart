@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
 import '_1022/colum_row/colum.dart';
 import '_1022/colum_row/row.dart';
@@ -10,6 +9,7 @@ import '_1028/v_insta_home.dart';
 import '_1104/presentation/page/v_provider.dart';
 import '_1105/d_day/presentation/page/v_d_day_home.dart';
 import '_1105/riverpod/presentation/page/v_riverpod.dart';
+import '_1107/presentation/page/v_restaurant.dart';
 import 'core/widget/nav_btn.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,22 +25,17 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body: const SafeArea(
-        child: Center(
+        child: Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    NavBtn(name: "ROW", page: RowPage()),
-                    Gap(16),
-                    NavBtn(name: "COLUM", page: ColumPage()),
-                    Gap(16),
-                    NavBtn(name: "Container", page: ContainerPage()),
-                  ],
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  NavBtn(name: "ROW", page: RowPage()),
+                  NavBtn(name: "COLUM", page: ColumPage()),
+                  NavBtn(name: "Container", page: ContainerPage()),
+                ],
               ),
               NavBtn(name: "UberEats", page: UberEatesPage()),
               Row(
@@ -58,6 +53,7 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               NavBtn(name: "D-Day", page: DDayHomePage()),
+              NavBtn(name: "Restaurant", page: RestaurantPage()),
             ],
           ),
         ),
