@@ -50,6 +50,7 @@ flutter:
     - lib/core/assets/imgs/foodIcons/
     - lib/core/assets/imgs/ads/
     - lib/core/assets/imgs/story_highlihgt_imgs/
+    - lib/core/assets/imgs/clock/
 
 flutter_launcher_icons:
   android: "sesac_log"

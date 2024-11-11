@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pro1022/_1111/page/view/p_pomodoro_timer.dart';
 
 import '_1022/colum_row/colum.dart';
 import '_1022/colum_row/row.dart';
@@ -54,6 +55,7 @@ class HomePage extends StatelessWidget {
               ),
               NavBtn(name: "D-Day", page: DDayHomePage()),
               NavBtn(name: "Restaurant", page: RestaurantPage()),
+              NavBtn(name: "Timer", page: PomodoroTimerPage()),
             ],
           ),
         ),

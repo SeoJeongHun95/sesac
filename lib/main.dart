@@ -38,12 +38,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.light,
         textTheme: GoogleFonts.juaTextTheme(textTheme).copyWith(
-          bodyMedium: GoogleFonts.oswald(textStyle: textTheme.bodyMedium),
-          bodyLarge: GoogleFonts.oswald(textStyle: textTheme.bodyLarge),
-          bodySmall: GoogleFonts.oswald(textStyle: textTheme.bodySmall),
-          labelMedium: GoogleFonts.oswald(textStyle: textTheme.labelMedium),
-          labelSmall: GoogleFonts.oswald(textStyle: textTheme.labelSmall),
-          labelLarge: GoogleFonts.oswald(textStyle: textTheme.labelLarge),
+          bodyMedium: GoogleFonts.jua(textStyle: textTheme.bodyMedium),
+          bodyLarge: GoogleFonts.jua(textStyle: textTheme.bodyLarge),
+          bodySmall: GoogleFonts.jua(textStyle: textTheme.bodySmall),
+          labelMedium: GoogleFonts.jua(textStyle: textTheme.labelMedium),
+          labelSmall: GoogleFonts.jua(textStyle: textTheme.labelSmall),
+          labelLarge: GoogleFonts.jua(textStyle: textTheme.labelLarge),
         ),
       ),
       home: const HomePage(),
