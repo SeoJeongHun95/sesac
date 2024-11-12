@@ -51,6 +51,8 @@ flutter:
     - lib/core/assets/imgs/ads/
     - lib/core/assets/imgs/story_highlihgt_imgs/
     - lib/core/assets/imgs/clock/
+    - lib/core/assets/imgs/logo/
+    - lib/_1112/data/data/ottdata.json
 
 flutter_launcher_icons:
   android: "sesac_log"

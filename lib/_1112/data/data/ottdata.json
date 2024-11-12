@@ -1,0 +1,26 @@
+[
+    {
+        "serviceName": "Netflix",
+        "nextPaymentDay": "2024-12-01",
+        "cost": "13,500",
+        "icon": "lib/core/assets/imgs/logo/netflix_logo.png"
+    },
+    {
+        "serviceName": "Youtube Primium",
+        "nextPaymentDay": "2024-12-10",
+        "cost": "14,900",
+        "icon": "lib/core/assets/imgs/logo/youtube_logo.png"
+    },
+    {
+        "serviceName": "Wavve",
+        "nextPaymentDay": "2024-12-15",
+        "cost": "7,900",
+        "icon": "lib/core/assets/imgs/logo/wavve_logo.png"
+    },
+    {
+        "serviceName": "TVING",
+        "nextPaymentDay": "2024-12-20",
+        "cost": "7,900",
+        "icon": "lib/core/assets/imgs/logo/tving_logo.png"
+    }
+]
