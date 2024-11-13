@@ -7,7 +7,7 @@ part of 'ott_subscribe_data_provider.dart';
 // **************************************************************************
 
 String _$ottSubscribeDataProviderHash() =>
-    r'd6d606e4e9b92c7549493cbb8ea37abc1cfd45f9';
+    r'4187c4c8f1a1e6fef1ce7d490e14682c445d06f0';
 
 /// See also [ottSubscribeDataProvider].
 @ProviderFor(ottSubscribeDataProvider)

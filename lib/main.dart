@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import '_1105/d_day/data/model/dDay.dart';
+import 'core/theme/britness_provider.dart';
 import 'home.dart';
 
 void main() async {
@@ -25,18 +26,19 @@ void main() async {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final textTheme = Theme.of(context).textTheme;
+    var brightness = ref.watch(britnessProvider);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Sesac',
       theme: ThemeData(
-        brightness: Brightness.light,
+        brightness: brightness ? Brightness.light : Brightness.dark,
         textTheme: GoogleFonts.juaTextTheme(textTheme).copyWith(
           bodyMedium: GoogleFonts.jua(textStyle: textTheme.bodyMedium),
           bodyLarge: GoogleFonts.jua(textStyle: textTheme.bodyLarge),

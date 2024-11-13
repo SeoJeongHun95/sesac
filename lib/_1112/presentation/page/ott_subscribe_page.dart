@@ -11,41 +11,43 @@ class OttSubscribePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     AsyncValue ottData = ref.watch(ottSubscribeDataProviderProvider);
 
+    final DateTime birthdat = DateTime(1995, 7, 1);
+
     return Scaffold(
       appBar: AppBar(
         scrolledUnderElevation: 0,
         title: const Text("OTT 구독관리"),
-        backgroundColor: Colors.white,
       ),
       body: SafeArea(
-          child: ottData.when(
-        data: (data) => ListView.separated(
-          itemBuilder: (context, index) => ListTile(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-              side: const BorderSide(
-                color: Colors.blue,
-                width: 4,
+        child: ottData.when(
+          data: (data) => ListView.separated(
+            itemBuilder: (context, index) => ListTile(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+                side: const BorderSide(
+                  color: Colors.blue,
+                  width: 4,
+                ),
               ),
+              leading: Image.asset(
+                data[index].icon,
+                errorBuilder: (context, error, stackTrace) =>
+                    const Text("No Image"),
+              ),
+              title: Text(data[index].serviceName),
+              subtitle: Text(
+                  "다음결제일 ${data[index].nextPaymentDay.toString().split(" ")[0]}"),
+              trailing: Text("₩ ${data[index].cost}"),
             ),
-            leading: Image.asset(
-              data[index].icon,
-              errorBuilder: (context, error, stackTrace) =>
-                  const Text("No Image"),
-            ),
-            title: Text(data[index].serviceName),
-            subtitle: Text(
-                "다음결제일 ${data[index].nextPaymentDay.toString().split(" ")[0]}"),
-            trailing: Text("₩ ${data[index].cost}"),
+            separatorBuilder: (context, index) => const Gap(8),
+            itemCount: data.length,
           ),
-          separatorBuilder: (context, index) => const Gap(8),
-          itemCount: data.length,
+          error: (error, stackTrace) => Center(
+            child: Text(error.toString()),
+          ),
+          loading: () => const CircularProgressIndicator(),
         ),
-        error: (error, stackTrace) => Center(
-          child: Text(error.toString()),
-        ),
-        loading: () => const CircularProgressIndicator(),
-      )),
+      ),
     );
   }
 }
