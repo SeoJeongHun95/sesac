@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pro1022/_1114/m/data_model.dart';
+import 'package:pro1022/_1114/v/view.dart';
+import 'package:pro1022/_1114/vm/view_model.dart';
 
 import '_1022/colum_row/colum.dart';
 import '_1022/colum_row/row.dart';
@@ -21,6 +24,9 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final dataModel = DataModel();
+    final viewModel = ViewModel(dataModel);
+
     var brightness = ref.watch(britnessProvider);
 
     return Scaffold(
@@ -39,11 +45,11 @@ class HomePage extends ConsumerWidget {
           )
         ],
       ),
-      body: const SafeArea(
+      body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   NavBtn(name: "ROW", page: RowPage()),
@@ -51,25 +57,26 @@ class HomePage extends ConsumerWidget {
                   NavBtn(name: "Container", page: ContainerPage()),
                 ],
               ),
-              NavBtn(name: "UberEats", page: UberEatesPage()),
-              Row(
+              const NavBtn(name: "UberEats", page: UberEatesPage()),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   NavBtn(name: "Insta", page: InstaHomePage()),
                   NavBtn(name: "Bank", page: BankPage()),
                 ],
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   NavBtn(name: "Provider", page: ProviderPage()),
                   NavBtn(name: "Riverpod", page: RiverpodPage()),
                 ],
               ),
-              NavBtn(name: "D-Day", page: DDayHomePage()),
-              NavBtn(name: "Restaurant", page: RestaurantPage()),
-              NavBtn(name: "Timer", page: PomodoroTimerPage()),
-              NavBtn(name: "OTTSubs", page: OttSubscribePage()),
+              const NavBtn(name: "D-Day", page: DDayHomePage()),
+              const NavBtn(name: "Restaurant", page: RestaurantPage()),
+              const NavBtn(name: "Timer", page: PomodoroTimerPage()),
+              const NavBtn(name: "OTTSubs", page: OttSubscribePage()),
+              NavBtn(name: "MVVM", page: MvvmPage(viewModel: viewModel)),
             ],
           ),
         ),
