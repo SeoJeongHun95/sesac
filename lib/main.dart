@@ -12,7 +12,7 @@ import 'home.dart';
 void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(DDayAdapter());
-  AuthRepository.initialize(appKey: KakaoApi.key);
+  AuthRepository.initialize(appKey: Api.KakaoApiKey);
 
   runApp(
     // Provider 용

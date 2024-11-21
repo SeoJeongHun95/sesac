@@ -47,7 +47,7 @@ class _KakaoMapPageState extends State<KakaoMapPage> {
                 children: [
                   MaterialButton(
                     onPressed: () => mapController
-                        .setCenter(LatLng(37.557360297, 127.085365411)),
+                        .setCenter(LatLng(37.586448942, 126.976964230)),
                     color: Colors.white,
                     child: const Text("우리집으로"),
                   ),
