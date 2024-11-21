@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -15,6 +17,7 @@ class _PomodoroTimerPageState extends State<PomodoroTimerPage> {
   double _remainingTime = 0;
   int _totalStudyTime = 0;
   bool _isRunning = false;
+  // ignore: unused_field
   bool _isStudyTime = false;
   String _statusMessage = "현재 휴식중입니다.";
   int _clockCnt = 0;
