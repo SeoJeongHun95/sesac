@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:kakao_map_plugin/kakao_map_plugin.dart';
 
 import '_1105/d_day/data/model/dDay.dart';
+import 'core/Keys/api_keys.dart';
 import 'core/theme/britness_provider.dart';
 import 'home.dart';
 
 void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(DDayAdapter());
+  AuthRepository.initialize(appKey: KakaoApi.key);
 
   runApp(
     // Provider 용

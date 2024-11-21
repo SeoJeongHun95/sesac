@@ -6,7 +6,7 @@ part of 'britness_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$britnessHash() => r'15a2adc95f81ffd9ebf08103f4147cd7946baaa7';
+String _$britnessHash() => r'fac311533ee168331ecbda9c0e6318716a5212a8';
 
 /// See also [Britness].
 @ProviderFor(Britness)

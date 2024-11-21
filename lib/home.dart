@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pro1022/_1114/m/data_model.dart';
 import 'package:pro1022/_1114/v/view.dart';
 import 'package:pro1022/_1114/vm/view_model.dart';
+import 'package:pro1022/_1121/presentation/kakao_map_page.dart';
 
 import '_1022/colum_row/colum.dart';
 import '_1022/colum_row/row.dart';
@@ -77,6 +78,7 @@ class HomePage extends ConsumerWidget {
               const NavBtn(name: "Timer", page: PomodoroTimerPage()),
               const NavBtn(name: "OTTSubs", page: OttSubscribePage()),
               NavBtn(name: "MVVM", page: MvvmPage(viewModel: viewModel)),
+              const NavBtn(name: "KakaoMap", page: KakaoMapPage()),
             ],
           ),
         ),
